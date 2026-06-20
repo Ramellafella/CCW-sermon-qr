@@ -39,5 +39,5 @@ fetch(apiUrl)
     }, 3000);
   })
     .catch(err => {
-      console.error(err);
+      console.error("FETCH ERROR:", err);
   });
