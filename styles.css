@@ -1,7 +1,7 @@
 body {
-  font-family: "Futura PT, "Futura, "Arial", sans-serif;
+  font-family: "Futura PT, "Futura", "Arial", sans-serif;
   margin: 0;
-  background: #f5f7fa;
+  background: #005DA2;
   color: #1a1a1a;
 }
 
@@ -13,7 +13,7 @@ body {
 h1 {
   font-size: 22px;
   margin-bottom: 24px;
-  color: #005DA2;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -36,12 +36,12 @@ h1 {
 .value {
   font-size: 20px;
   font-weight: 600;
-  color: #111;
+  color: #ffffff;
 }
 
 #status {
   margin-top: 20px;
   font-size: 14px;
-  color: #005DA2;
+  color: #ffffff;
   opacity: 0.8;
 }
