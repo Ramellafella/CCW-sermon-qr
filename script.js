@@ -1,5 +1,3 @@
-alert("script is runnning");
-
 const apiUrl = 
   "https://script.google.com/macros/s/AKfycbxv9-D_pHFJztQjWV0xie_8OeH9mzVfEKMYeU9xCeH-IZ_STR6aa7X7j7ICgQHmBvlo/exec";
 
@@ -21,7 +19,7 @@ fetch(apiUrl)
     document.getElementById("passage").textContent = current.passage;
 
     const bibleUrl = "https://www.biblegateway.com/passage/?search=" + encodeURIComponent(current.passage);
-    const status = document.createElement("div");
+    /* const status = document.createElement("div");
 
     status.innerHTML = `
       <p>Opening Bible Gateway...</p>
@@ -36,8 +34,8 @@ fetch(apiUrl)
     
     setTimeout(() => {
       window.location.href = bibleUrl;
-    }, 3000);
-  })
+    }, 3000); 
+  }) */
     .catch(err => {
       console.error("FETCH ERROR:", err);
   });
