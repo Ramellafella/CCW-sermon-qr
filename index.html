@@ -2,18 +2,29 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"
     <title>Today's Service</title>
     <link rel="stylesheet" href="styles.css">
   </head>
+  
   <body>
-    <h1>Today's Service</h1>
+    <div class="container">
+      <img src="logo.png" class="logo">
+      
+      <h1>Today's Service</h1>
+  
+      <div class="card">
+        <div class="label">Preacher</div>
+        <div id="preacher" class="value"></div>
+      </div>
 
-    <div class="info">
-      Preacher: <span id="preacher"></span>
-    </div>
+      <div class="card">
+        <div class="label">Passage</div>
+        <div id="passage" class="value"></div>
+      </div>
 
-    <div class="info">
-      Passage: <span id="passage"></span>
+      <div id="status">Opening the Bible passage . . . </div>
+      
     </div>
 
     <script src="script.js"></script>
