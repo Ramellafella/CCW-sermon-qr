@@ -3,18 +3,8 @@ const apiUrl =
 
 fetch(apiUrl)
   .then(r => r.json())
-  .then(schedule => {
-    const today = new Date();
-    let current = schedule[0];
-
-    schedule.forEach(item => {
-      const sermonDate = new Date(item.date);
-
-      if (sermonDate <= today) {
-        current = item;
-      }
-    });
-
+  .then(current => {
+    
     document.getElementById("preacher").textContent = current.preacher;
     document.getElementById("passage").textContent = current.passage;
 
