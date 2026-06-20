@@ -17,14 +17,10 @@ fetch(apiUrl)
       }
     });
 
-    document.getElementById("preacher")
-      .textContent = current.preacher;
+    document.getElementById("preacher").textContent = current.preacher;
+    document.getElementById("passage").textContent = current.passage;
 
-    document.getElementById("passage")
-      .textContent = current.passage;
-
-    document.getElementById("link")
-      .href = "https://www.biblegateway.com/passage/?search=" + encodeURIComponent(current.passage);
+    const bibleUrl = "https://www.biblegateway.com/passage/?search=" + encodeURIComponent(current.passage);
 
     setTimeout(() => {
       window.location.href = 
@@ -33,7 +29,4 @@ fetch(apiUrl)
   })
     .catch(err => {
       console.error(err);
-
-      document.getElementById("status").textContent = 
-        "Unable to load service information."
   });
