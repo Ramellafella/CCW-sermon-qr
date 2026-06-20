@@ -1,12 +1,13 @@
 body {
   font-family: "Futura PT", "Futura", "Arial", sans-serif;
   margin: 0;
-  background: #005DA2;
+  background: #666;
   color: #1a1a1a;
+  text-align: center;
 }
 
 .logo {
-  width: 90px;
+  width: 150px;
   margin: 10px auto 20px;
 }
 
@@ -18,18 +19,15 @@ h1 {
 }
 
 .card {
-  background: white;
   border-radius: 14px;
-  padding: 18pxl
-  margin-bottom: 14px;
-  box-shadow: 0 6px 18px rgba (0,0,0,0.08);
+  padding: 15px;
 }
 
 .label {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #666;
+  color: #000000;
   margin-bottom: 6px;
 }
 
@@ -42,6 +40,6 @@ h1 {
 #status {
   margin-top: 20px;
   font-size: 14px;
-  color: #ffffff;
+  color: #023459;
   opacity: 0.8;
 }
