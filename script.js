@@ -1,3 +1,5 @@
+alert("script is runnning");
+
 const apiUrl = 
   "https://script.google.com/macros/s/AKfycbxv9-D_pHFJztQjWV0xie_8OeH9mzVfEKMYeU9xCeH-IZ_STR6aa7X7j7ICgQHmBvlo/exec";
 
@@ -38,6 +40,4 @@ fetch(apiUrl)
   })
     .catch(err => {
       console.error("FETCH ERROR:", err);
-
-      alert("script ran through");
   });
