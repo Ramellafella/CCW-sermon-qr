@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Today's Passage</title>
+  </head>
+  <body>
+
+    <script>
+      const csvUrl = 
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vQi3peCR2jMH8sBS8d6BD01iJLMI3Mjv6SoJDz9lkRyyXWEW9WnlPdymiv5785js5rKH5G77ewt8lNW/pub?gid=0&single=true&output=csv";
+
+      fetch(csvUrl)
+        .then(r => r.text())
+        .then(csv => {
+          const rows = csv.trim().split("\n").slice(1);
+          const schedule = {};
+          
+          rows.forEach(row => {
+            const [date, passage] = row.split(",");
+            schedule[date] = passage;
+          });
+
+          const today = new Date();
+          let latestDate = null;
+
+          Object.keys (schedule).forEach(date => {
+            const d = new Date(date);
+
+            if (d <= today && (!latestDate || d > new Date(latestDate))) {
+              latestDate = date;
+            }
+          });
+
+          const passage = 
+            schedule[latestDate] || 
+            Object.values(schedule)[0];
+
+          window.location.href = 
+            "https://www.biblegateway.com/passage/?search=" + encodeURIComponent(passage);
+        });
+      
+    </script>
+  </body>
+</html>
