@@ -1,40 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Today's Passage</title>
+    <meta charset="utf-8">
+    <title>Today's Service</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <h1>Today's Service</h1>
 
-    <script>
-      const apiUrl = 
-        "https://script.google.com/macros/s/AKfycbxv9-D_pHFJztQjWV0xie_8OeH9mzVfEKMYeU9xCeH-IZ_STR6aa7X7j7ICgQHmBvlo/exec";
+    <div class="info">
+      Preacher: <span id="preacher"></span>
+    </div>
 
-      fetch(apiUrl)
-        .then(r => r.json())
-        .then(schedule => {
-          const today = new Date();
+    <div>
+      Passage: <span id="passage"></span>
+    </div>
 
-          let current = schedule[0];
-
-          schedule.forEach(item => {
-            const sermonDate = 
-              new Date(item.date);
-
-            if (sermonDate <= today) {
-              current = item;
-            }
-          }
-
-          document.getElementById("preacher")
-            .textContent = current.preacher;
-
-          document.getElementById("passage")
-            .textContent = current.passage;
-
-          document.getElementById("link")
-            .href = "https://www.biblegateway.com/passage/?search=" + encodeURIComponent(current.passage);
-        });
-      
-    </script>
+    <srcipt src="sript.js"></srcipt>
   </body>
 </html>
