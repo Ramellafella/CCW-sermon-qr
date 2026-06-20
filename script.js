@@ -30,12 +30,12 @@ fetch(apiUrl)
 
     document.getElementById("goNow").onclick = () => {
       window.location.href = bibleUrl;
-    };
+    }; */
     
     setTimeout(() => {
       window.location.href = bibleUrl;
     }, 3000); 
-  }) */
+  })
     .catch(err => {
       console.error("FETCH ERROR:", err);
   });
