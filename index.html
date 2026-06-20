@@ -6,37 +6,33 @@
   <body>
 
     <script>
-      const csvUrl = 
-        "https://docs.google.com/spreadsheets/d/e/2PACX-1vQi3peCR2jMH8sBS8d6BD01iJLMI3Mjv6SoJDz9lkRyyXWEW9WnlPdymiv5785js5rKH5G77ewt8lNW/pub?gid=0&single=true&output=csv";
+      const apiUrl = 
+        "https://script.google.com/macros/s/AKfycbxv9-D_pHFJztQjWV0xie_8OeH9mzVfEKMYeU9xCeH-IZ_STR6aa7X7j7ICgQHmBvlo/exec";
 
-      fetch(csvUrl)
-        .then(r => r.text())
-        .then(csv => {
-          const rows = csv.trim().split("\n").slice(1);
-          const schedule = {};
-          
-          rows.forEach(row => {
-            const [date, passage] = row.split(",");
-            schedule[date] = passage;
-          });
-
+      fetch(apiUrl)
+        .then(r => r.json())
+        .then(schedule => {
           const today = new Date();
-          let latestDate = null;
 
-          Object.keys (schedule).forEach(date => {
-            const d = new Date(date);
+          let current = schedule[0];
 
-            if (d <= today && (!latestDate || d > new Date(latestDate))) {
-              latestDate = date;
+          schedule.forEach(item => {
+            const sermonDate = 
+              new Date(item.date);
+
+            if (sermonDare <= today) {
+              current = item;
             }
-          });
+          }
 
-          const passage = 
-            schedule[latestDate] || 
-            Object.values(schedule)[0];
+          document.getElementById("preacher")
+            .textContent = current.preacher;
 
-          window.location.href = 
-            "https://www.biblegateway.com/passage/?search=" + encodeURIComponent(passage);
+          document.getElementById("passage")
+            .textContent = current.passage;
+
+          document.getElementById("link")
+            .href = "https://www.biblegateway.com/passage/?search=" + encodeURIComponent(current.passage);
         });
       
     </script>
