@@ -5,12 +5,10 @@ fetch(apiUrl)
   .then(r => r.json())
   .then(schedule => {
     const today = new Date();
-
     let current = schedule[0];
 
     schedule.forEach(item => {
-      const sermonDate = 
-        new Date(item.date);
+      const sermonDate = new Date(item.date);
 
       if (sermonDate <= today) {
         current = item;
@@ -21,9 +19,9 @@ fetch(apiUrl)
     document.getElementById("passage").textContent = current.passage;
 
     const bibleUrl = "https://www.biblegateway.com/passage/?search=" + encodeURIComponent(current.passage);
-    const status= document.createElement("div");
+    const status = document.createElement("div");
 
-    status.innerHtml = `
+    status.innerHTML = `
       <p>Opening Bible Gateway...</p>
       <button id="goNow"> Tap to Continue</button>
       `;
@@ -40,4 +38,6 @@ fetch(apiUrl)
   })
     .catch(err => {
       console.error("FETCH ERROR:", err);
+
+      alert("script ran through");
   });
