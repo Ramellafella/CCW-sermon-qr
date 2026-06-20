@@ -28,12 +28,12 @@ fetch(apiUrl)
 
     setTimeout(() => {
       window.location.href = 
-        document.getElementById("link).href;
+        document.getElementById("link").href;
     }, 3000);
   })
     .catch(err => {
       console.error(err);
 
-      document.getElementById("status).textContent = 
+      document.getElementById("status").textContent = 
         "Unable to load service information."
   });
