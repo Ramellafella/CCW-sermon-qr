@@ -23,8 +23,7 @@ fetch(apiUrl)
     const bibleUrl = "https://www.biblegateway.com/passage/?search=" + encodeURIComponent(current.passage);
 
     setTimeout(() => {
-      window.location.href = 
-        document.getElementById("link").href;
+      window.location.href = bibleUrl;
     }, 3000);
   })
     .catch(err => {
