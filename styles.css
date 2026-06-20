@@ -1,27 +1,47 @@
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  max-width: 600px;
-  margin: 60px auto;
-  padding: 20px;
+  font-family: "Futura PT, "Futura, "Arial", sans-serif;
+  margin: 0;
+  background: #f5f7fa;
+  color: #1a1a1a;
+}
+
+.logo {
+  width: 90px;
+  margin: 10px auto 20px;
 }
 
 h1 {
-  margin-bottom: 30px;
+  font-size: 22px;
+  margin-bottom: 24px;
+  color: #005DA2;
+  font-weight: 600;
 }
 
-#passage {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 20px;
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 18pxl
+  margin-bottom: 14px;
+  box-shadow: 0 6px 18px rgba (0,0,0,0.08);
 }
 
-.info {
-  font-size: 1.2rem;
-  margin: 10px 0;
+.label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.value {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
 }
 
 #status {
-  margin-top: 40px;
-  color: #666;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #005DA2;
+  opacity: 0.8;
 }
