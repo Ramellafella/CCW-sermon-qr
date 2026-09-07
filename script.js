@@ -8,7 +8,8 @@ fetch(apiUrl)
     document.getElementById("preacher").textContent = current.preacher;
     document.getElementById("passage").textContent = current.passage;
 
-    const bibleUrl = "https://www.biblegateway.com/passage/?search=" + encodeURIComponent(current.passage) + "&version=NIVUK";
+    const params = new URLSearchParams({search: current.passage, version: "NIVUK"});
+    const bibleUrl = "https://www.biblegateway.com/passage/?" + params.toString();
     /* const status = document.createElement("div");
 
     status.innerHTML = `
